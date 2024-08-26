@@ -19,7 +19,7 @@ In this exercise, you will setup the integration between a GITHub repository and
 
 3. You should see the similar output as shown below.  Hit **Enter** for each question the program asks.
    
-    ![](img/SSHKeyGen.png)
+    ![](img/SSHKeygen.png)
 
 4. The ssh-keygen program creates two files, a public key named **id_ed2519.pub**, and a private key named **id_ed2519** with no extension.
 
