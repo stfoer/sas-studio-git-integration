@@ -1,15 +1,37 @@
 
 
-# 1. SAS Studio - Git Integration Setup
+# 1. SAS Studio - Git Integration Setup with SSH
 
 <br>
 
 ## Exercise Description
-In this exercise, you will setup the integration between a GITHub repository and SAS Studio using HTTPS.
+In this exercise, you will setup the integration between a GITHub repository and SAS Studio using SSH.
 
 <br>
 
-## Create Personal Access Token for GitHub
+## Create New SSH Keys
+1. On your course environment Windows desktop, click the Windows button, select **Git** and *click* the **Git Bash** icon.
+   
+   ![](img/GitBash.png)
+
+2. In the git bash window, run the command **ssh-keygen -t ed25519 -C "your_email@example.com"**.
+   >Make sure to replace the sample email with your real github email address.
+
+3. You should see the similar output as shown below.  Hit **Enter** for each question the program asks.
+    ![](img/SSHKeyGen.png)
+
+4. The ssh-keygen program creates two files, a public key named **id_ed2519.pub**, and a private key named **id_ed2519** with no extension.
+
+## Copy the SSH Keys to your SAS Server
+
+1. In SAS Studio, *Right Click* the **SAS Server->Home->gelcontent->keys** directory in the Explorer ![](img/ExplorerICon.png) and select **Upload Files**.
+   ![](img/UploadKeys.png)
+1. Select the plus sign ![](img/AddIcon.png).
+2. Navigate to the **C:\Users\Student\.ssh** directory and select the **id_ed2519.pub** and **id_ed2519** files.
+3. Click **Upload**.
+
+## Copy the SSH Keys to your GitHub Account
+
 1. In *Google Chrome*, navigate to **https://github.com**.
    
 2. Click **Sign in** to sign in with your *GitHub* credentials.
@@ -20,57 +42,20 @@ In this exercise, you will setup the integration between a GITHub repository and
 3. Select your account picture **&#10132; Settings**.
     ![](img/GitHub_SignIn.png)
 
-4. Scroll down and select **<> Developer settings**.
-   
-5. Select **Personal access tokens &#10132; Tokens(classic)**.
-    ![](img/PersonalAccessTokens.png)
+4. Select **SSH and GPG key** on the left.
+5. Push the **New SSH Key** button.
+6. Name your SSH Key, **myGitHubSSHKey** and copy in the contents of your **public** ssh key.
+   >You can copy the contents of your public ssh key to the clipboard by returning to the git bash terminal and running **clip < ~/.ssh/id_ed25519.pub**.
 
-6. Select **Generate new token &#10132; Generate new token (classic)**.
-    ![](img/GenerateNewToken.png)
-
-7. Enter the following information:
-   - *Note*:  **My Token for SAS Explore**
-   - *Expiration*: **30 days**
-   - *Select scopes*: ![](img/SelectedCheckbox.png) **repo**  and  ![](img/SelectedCheckbox.png) **user**
-
-    ![](img/GenerateToken.png)
-    > &#9998; **user** section is not displayed in this screenshot.
-
-8. Scroll down and click **Generate token**.
-    ![](img/GenerateToken2.png)
-
-9.  Select ![](img/Copy.png) to copy the token.
-   > &#9888; Make sure to copy your personal access token now. You won’t be able to see it again!
-
-   ![](img/CopyToken.png)
-
-10. Open *Visual Studio Code* from the *Applications* pull down menu on the desktop, create a file named **info.txt** on the desktop, paste the token in the file and save it.
-    > &#9888; Keep the file open for future reference.
-   ![](img/SavedToken.png)
-
-11. Return to your *GitHub* session in *Chrome*.  Select ![](img/GitHubImage.png) to return to your *GitHub dashboard*.
-
-<br>
-<br>
-
-## Confirm your Email Settings for GitHub
-1. Select your account picture **&#10132; Settings**.
-   
-2. Select **Emails**.
-   
-3. Make note of your **primary email address**.
-     > &#9998; You will need this for your Git Profile in SAS Studio.
-
-4.  Ensure that the option to **Block command line pushes that expose my email** is unchecked.
-![](img/GitEmailSettings.png)
-
-1. Select ![](img/GitHubImage.png) to return to your *GitHub dashboard*.
-
-<br>
-<br>
 
 ## Create a Fork of a GitHub Repository
 
+1. In *Google Chrome*, navigate to **https://github.com**.
+   
+2. Click **Sign in** to sign in with your *GitHub* credentials.
+   > &#9755; GitHub may send you a confirmation email.  Please make sure you have access to the email account you are using.
+   
+     > &#9755; If you do not already have *GitHub* credentials, then click **Sign Up** and follow the instructions to create them.
 1. Enter **SASExplore2023/UsingGitInSASStudio** in the *Search* area.
     ![](img/GitHub_Search.png)
 
