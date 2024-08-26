@@ -77,11 +77,11 @@ In this exercise, you will setup the integration between a GITHub repository and
 6. Once the creation of the fork is complete, then select **Code**.
    ![](img/CodeButton.png)
 
-7. On the *Local* tab, make sure **HTTPS** is selected, and then select ![](img/Copy.png) to copy the path to *clone* this fork of the repository.
-   ![](img/CloneRepository.png)
+7. On the *Local* tab, make sure **SSH** is selected, and then select ![](img/Copy.png) to copy the path to *clone* this fork of the repository.
+   ![](img/sshLink.png)
 
-8. Paste the URL in the *Visual Studio Code* session you copied the token in.
-    ![](img/CloneURL.png)
+8. Paste the URL in the *Notepad++* session to use later.
+    ![](img/sshNotepad.png)
 
 <br>
 <br>
@@ -109,14 +109,16 @@ In this exercise, you will setup the integration between a GITHub repository and
    
    ![](img/AddGITProfile.png)
 
-7. Select **HTTPS** tab and enter the following information:
+7. Select **SSH** tab and enter the following information:
    - Profile name: **MyGitHubProfile**
    - User name: ***&lt;your GitHub user name&gt;***
     - Email: ***&lt;your GitHub primary email address&gt;***
-    - Password: ***&lt;paste saved Personal Access Token for GitHub&gt;***
-        > &#9998; You created and saved it earlier in this exercise.
+    - Password: *&lt;Leave Blank>*
+    - Public SSH file path:  **&lt;/gelcontent/keys/id_ed25519.pub>**
+    - Private SSH file path:  **&lt;/gelcontent/keys/id_ed25519>**
+        
 
-    ![](img/HTTPSGitProfile.png)
+    ![](img/sshprofile.png)
 
 8. Click **OK** to create the profile.
     ![](img/SavedGitProfile.png)
