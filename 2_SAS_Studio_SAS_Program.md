@@ -11,6 +11,7 @@ In this exercise, you will edit a SAS program in your local Git repository and e
 <br>
 
 ## Execute a SAS Program from your Git Repository
+
 1. Open the **Google Chrome** browser on your Windows RACE Image.
 1. Select the **SAS Viya** bookmark.
 1. Enter the following:
