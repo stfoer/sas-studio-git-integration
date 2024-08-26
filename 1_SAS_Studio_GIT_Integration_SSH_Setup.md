@@ -31,7 +31,7 @@ In this exercise, you will setup the integration between a GITHub repository and
 2. Navigate to the **C:\Users\Student\.ssh** directory and select the **id_ed2519.pub** and **id_ed2519** files.
 3. Click **Upload**.
 
-## Copy the SSH Keys to your GitHub Account
+## Copy the Public SSH Key to your GitHub Account
 
 1. In *Google Chrome*, navigate to **https://github.com**.
    
@@ -48,6 +48,9 @@ In this exercise, you will setup the integration between a GITHub repository and
 6. Name your SSH Key, **myGitHubSSHKey** and copy in the contents of your **public** ssh key.
    >You can copy the contents of your public ssh key to the clipboard by returning to the git bash terminal and running **clip < ~/.ssh/id_ed25519.pub**.
 
+   ![](img/AddSSHKey.png)
+
+7. Click **Add SSH Key**.
 
 ## Create a Fork of a GitHub Repository
 
