@@ -64,9 +64,11 @@ In this exercise, you will work with GIT branches in SAS Studio.
    1. *Right click* the latest commit again and select **Create New Branch**.
    2. Name this branch, **his-branch**.
    3. *Un-check" **Checkout after create** and click **Create**.
+   
    ![](img/newBranch1.png)   
 5. You should now have 4 branches, **main**, **his-branch**, **your-branch**, and your feature branch from earlier.
 6. Check out **his-branch** by choosing it from the **Current branch** drop down menu.
+
    ![](img/checkOutHisBranch.png)
 7. Open the **TopNCategories.sas file** and make the following changes:
    1. Change **%let n=25;** to **%let n=15;**.
