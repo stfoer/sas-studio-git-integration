@@ -72,4 +72,4 @@ In this exercise, you will work with GIT branches in SAS Studio.
    ![](img/checkOutHisBranch.png)
 7. Open the **TopNCategories.sas file** and make the following changes:
    1. Change **%let n=25;** to **%let n=15;**.
-   2. Add the following comment at the bottom of the comment box: **/* Per User Feedback */**
+   2. Add the following comment at the bottom of the comment box: **Per User Feedback**.
