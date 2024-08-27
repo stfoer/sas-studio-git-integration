@@ -81,6 +81,7 @@ In this exercise, you will setup the integration between a GITHub repository and
    ![](img/sshLink.png)
 
 8. Paste the URL in the *Notepad++* session to use later.
+   
     ![](img/sshNotepad.png)
 
 <br>
