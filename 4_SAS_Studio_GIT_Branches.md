@@ -18,7 +18,7 @@ In this exercise, you will work with GIT branches in SAS Studio.
 1. Click **Sign In**.
 1. Select ![Viya Menu Selector](img/HamburgerMenu.png) **&#10132; Develop Code and Flows** to open *SAS Studio*.
 
-## Create a Branch
+## 1. Create a Branch
 
 1. Select ![](img/GITIcon.png) to view the **GIT** tab in *SAS Studio*.
 2. *Double click* the **myGitFolder** icon.
@@ -35,7 +35,7 @@ In this exercise, you will work with GIT branches in SAS Studio.
 
 ![](img/NewBranch.png)
 
-# Merge a Branch into Main
+# 2. Merge a Branch into Main
 
 1. Select ![](img/ExplorerIcon.png) to view the **Explorer** tab in *SAS Studio*.
 2. *Double click* the **TopNCategories.sas** file in **myGitFolder** to open it.
@@ -52,7 +52,7 @@ In this exercise, you will work with GIT branches in SAS Studio.
     ![](img/MergeBranch.png)
 11. Note that the main and feature branch are both on the same commit now.
 
-# Resolve a Merge Conflict
+# 3. Resolve a Merge Conflict
 
 1. Select ![](img/GitIcon.png) to view the **Git** tab in *SAS Studio*.
 2. Select the **History** tab.
@@ -110,3 +110,58 @@ In this exercise, you will work with GIT branches in SAS Studio.
 11. Stage and Commit with the comment, **Conflict Resolved**.
 12. Check the History tab to see the merge visual is complete.
     ![](img/mergeComplete.png)
+
+# 4. Reset a Branch
+
+1. Be sure to do the previous steps so that your repository is in a modified state and you have a known state (commit), you can reset to.
+2. Open the Git ![](img/GITIcon.png) and select the **History** tab.
+3. Check out **your-branch** by selecting it from the **Current branch** drop down menu.
+4. *Right click* the **main origin/main bug fixes** commit and select **Reset**.
+   >This action takes **your-branch** back to its state at that particular commit.
+![](img/resetCommand.png)
+5. You'll see dialog box asking which reset type you would like to perform.
+   >**Soft** = Only reset the repository.  Leave the changes in the staging area and the working directory.
+
+   >**Mixed** = Reset the repository and the staging area.  Leave the changes in the working directory.
+
+   >**Hard** = Reset the repository, the staging area, and the working directory.  Completely erase the changes.
+   ![](img/resetChoices.png)
+6. Select a **Hard** reset and push **OK**.
+7. After the reset, you'll see **your-branch** has been returned to the commit you selected.
+   >Note that **his-branch** has not been affected.
+8. With **your-branch** checked out, confirm that the changes to your working directory files have been erased.
+9. Check out **his-branch** and reset it to the same commit as well.
+
+
+# 4. Rebase a Branch with Another
+
+1. Check out **his-branch** and add the following code to **TopNCategories.sas** after the **footnote** statement:
+
+        /* his-branch: add merror option */
+        options merror;
+
+   ![](img/hisBranchSave.png)
+2. Close the **TopNCategories.sas** file.
+3. Return to the Git ![](img/GITIcon.png) page, stage and commit the change with the message, **merror**.
+4. Check out **your-branch** and add the following code to **TopNCategories.sas** in the **%let** statement block:
+
+        /* your-branch: Added q macro variable */
+        %let q=16;
+
+![](img/qMacro.png)
+
+5. Save the file, stage and commit the change with the comment, **q macro**.
+6. Select the **History** tab.
+7. Right click the latest commit, **his-branch merror** and select **Rebase your-branch on > Selected Commit**
+   ![](img/rebaseBranch.png)
+8. You will see the following text box:
+   ![](img/rebaseAlert.png)
+
+9.  Select **OK**.
+10. On the **History** tab, note that:
+    >**your-branch** now includes the **his-branch merror** commit.
+
+    >The commit illustration shows no merge.  It's as if **your-branch** was created from **his-branch**. 
+    ![](img/rebaseAfter.png)
+11. Open the **TopNCategories.sas** file and see that it includes the modification from **his-branch**.
+    ![](img/rebaseAfterFile.png)
