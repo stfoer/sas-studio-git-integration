@@ -165,3 +165,43 @@ In this exercise, you will work with GIT branches in SAS Studio.
     ![](img/rebaseAfter.png)
 11. Open the **TopNCategories.sas** file and see that it includes the modification from **his-branch**.
     ![](img/rebaseAfterFile.png)
+
+
+# 5. Stash your Work in Progress
+
+1. Use **Git Stash** to save your work temporarily while you quickly complete a hotfix for a differnt project.  
+   
+2. Make the following changes to **your-branch**:
+   1. Copy the **TopNCategories.sas** program by right-clicking it and selecting **Copy to** and selecting the **myGitClone** folder.  
+   
+   2. This will create a file named **TopNCategories_Copy1.sas**.  
+   3. Right click that file and rename it **NewCategoriesReport.sas**.
+   4. Rename **TopNCategories.sas** to **OldCategoriesReport.sas**.
+   5. Rename **PythonSample.py** to **PythonProgram.py**.
+   6. Add a note to the **Class_Export.flw** flow by opening it, right-clicking the canvas and selecting **Add a Note**. 
+      ![](img/flowNote.png)
+3. Return to the Git screen and **stage** your changes.  ***Do not commit them.***
+   ![](img/stageStash.png)
+4. Stash your changes by pushing the stash icon ![](img/gitStashIcon.png) and selecting **Stash**.
+5. After the stash, note that the staged changes have disappeared.  They are now stored in the stash.
+6. Return to the Explorer ![](img/ExplorerIcon.png) and look at the contents of your Git working directory.  It has reverted back to its state prior to your stashed changes.
+   
+   ![](img/stashDirectory.png)
+
+7. Complete the work for your hotfix by editing the **PythonSample.py** and adding the code **import swat** as shown below.
+   
+   ![](img/importSwat.png)
+
+8. Save and close the file.
+9. On the git screen ![](img/GITIcon.png), **stage** and **commit** the change with the comment **hotfix #1**.
+10. Open the history tab and note that **your-branch** is now one commit ahead of the stash.
+11. Push the stash icon ![](img/StageIcon.png) and select **Pop stash**.
+    > **Pop stash** applies the stashed changes and deletes the stash.
+
+    > **Apply stash** applies the stashed changes but keeps the stash.
+
+    ![](img/popStash.png)
+
+12. After the stash is applied, note that the stashed changes are re-introduced and that the hotfix change is also maintained and applied to the renamed file.
+    
+    ![](img/stashApply.png) ![](img/postStashPy.png) 

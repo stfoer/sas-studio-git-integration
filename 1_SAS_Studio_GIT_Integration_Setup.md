@@ -103,8 +103,8 @@ In this exercise, you will setup the integration between a GITHub repository and
 2. Select the **SAS Viya** bookmark.
    
 3. Enter the following:
-   - User ID: **student**
-   - Password: **Metadata0**
+   - User ID: **sasadm**
+   - Password: **lnxsas**
 
 
 2. Click **Sign In**.
@@ -142,7 +142,7 @@ In this exercise, you will setup the integration between a GITHub repository and
 1. Select ![](img/ExplorerIcon.png) to view the **Explorer** tab in *SAS Studio*.
    ![](img/ExplorerTab.png)
 
-2. Navigate to **Files &#10132; Home** and select ![](img/NewFolderIcon.png) **&#10132; Folder** .  Enter the name **MyGitClone**.
+2. Navigate to **SAS Server &#10132; Home &#10132; gelcontent** and select ![](img/NewFolderIcon.png) **&#10132; Folder** .  Enter the name **MyGitClone**.
     > &#9998; The folder for a Git Repository must exist on the SAS Server and be an empty folder.
 
     ![](img/CreateNewFolder.png)
